@@ -29,6 +29,11 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         @auth
+                            @can('isAdmin','App\Models\User')
+                                <li class="nav-item">
+                                    <a class="nav-link orange-button" href="{{ route('dashboard') }}">Dashboard</a>
+                                </li>
+                            @endcan
                             <li class="nav-item">
                                 <form action="{{ route('logout') }}" method="post">
                                     @csrf

@@ -22,6 +22,7 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('dashboard', 'App\Http\Controllers\SiteController@dashboard')->name('dashboard');
 
 Route::get('tasks', [TaskController::class,'index'])->name('tasks')->middleware('auth');
 Route::post('task.store', [TaskController::class ,'store'])->name('task.store')->middleware('auth');

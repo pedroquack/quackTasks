@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'Esses dados não condizem com nenhum usuario.',
+    'failed' => 'E-mail ou senha inválido',
     'password' => 'Senha incorreta.',
     'throttle' => 'Muitas tentativas de login efetuadas, espere :seconds segundos.',
 
