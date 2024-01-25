@@ -21,9 +21,9 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
-            $table->boolean('completed');
-            $table->datetime('date');
-            $table->integer('priority');
+            $table->boolean('completed')->default(0);
+            $table->timestamp('date')->nullable();
+            $table->integer('priority')->default(2);
             $table->timestamps();
         });
     }

@@ -9,7 +9,7 @@
                 <h1 class="title">Bem-vindo ao quackTasks</h1>
                 <p class="desc">Organize sua vida com facilidade. Agende tarefas, receba lembretes e aumente sua
                     produtividade.</p>
-                <a href="" class="button orange-button">Comece agora!</a>
+                <a href="{{ route('register') }}" class="button orange-button">Comece agora!</a>
             </div>
         </div>
     </main>
