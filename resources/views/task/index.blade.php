@@ -16,7 +16,7 @@
 
     <div class="task_container">
         <div class="adsense">
-            ad
+
         </div>
         <div class="tasks_div">
             <div class="header">
@@ -57,7 +57,7 @@
             </div>
         </div>
         <div class="adsense">
-            ad
+
         </div>
     </div>
 @endsection
