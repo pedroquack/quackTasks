@@ -1,6 +1,7 @@
 @extends('site.navbar')
 @section('content')
     <div class="dashboard container">
+        <h2>Olá {{ explode(' ',Auth::user()->name)[0] }}</h2>
         <div class="dashboard_cards row">
             <div class="dashboard_card users col-lg-4 col-12">
                 <h5 class="title">Usuarios :</h5>
