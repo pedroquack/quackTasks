@@ -29,4 +29,5 @@ Route::post('task.store', [TaskController::class ,'store'])->name('task.store')-
 Route::put('task.update/{task}',[TaskController::class , 'update'])->name('task.update')->middleware('auth');
 Route::delete('task.destroy/{task}',[TaskController::class,'destroy'])->name('task.destroy')->middleware('auth');
 
+Route::get('task.email', 'App\Http\Controllers\TaskController@email')->name('teste.email');
 require __DIR__.'/auth.php';

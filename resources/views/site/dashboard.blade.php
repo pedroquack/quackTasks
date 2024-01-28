@@ -17,4 +17,5 @@
             </div>
         </div>
     </div>
+    <a href="{{ route('teste.email') }}">Enviar email</a>
 @endsection
