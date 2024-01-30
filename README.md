@@ -11,4 +11,3 @@ Desenvolvi o quackTasks para proporcionar uma experiência simplificada e intuit
 Tecnologias utilizadas: PHP, LARAVEL, LIVEWIRE, SQL, HTML5, CSS, BOOTSTRAP, JAVASCRIPT
 
 URL do site: https://quacktasks.com.br
-Repositorio git: https://github.com/pedroquack/quackTasks
