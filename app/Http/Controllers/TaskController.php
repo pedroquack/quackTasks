@@ -11,4 +11,14 @@ class TaskController extends Controller
         $tasks = Task::all();
         return view('tasks.index', compact('tasks'));
     }
+
+    public function destroy($id){
+        $task = Task::find($id);
+        if(!isset($task)){
+            http_response_code(404);
+            abort(404);
+        }
+        $task->delete();
+        return redirect()->back();
+    }
 }

@@ -126,6 +126,9 @@
     width: 80%;
     border-radius: 1rem;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 .task-container-header{
     display: flex;
@@ -136,14 +139,14 @@
     font-size: 1.6rem;
     font-weight: bold;
 }
-.task-container-header button{
+.task-container-header-button{
     background-color: var(--orange);
     border-radius: 50%;
     transition: 100ms ease-in-out;
     color: white;
     box-shadow: 0px 3px 6px var(--shadow);
 }
-.task-container-header button:hover{
+.task-container-header-button:hover{
     background-color: var(--dark-orange);
     transition: 100ms ease-in-out;
 }
@@ -157,11 +160,14 @@
     font-size: 1.2rem;
     font-weight: bold;
 }
-
+.category-tasks{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
 .task{
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem;
     cursor: pointer;
     height: 100%;
 }
@@ -196,8 +202,89 @@
 .task-delete-button:hover{
     background-color: var(--orange);
 }
+.task-title input{
+    height: 1.5rem;
+    width: 1.5rem;
+}
 .rotate-90{
     transform: rotate(90deg);
+}
+.modal{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--shadow);
+}
+.modal-content{
+    background-color: white;
+    max-width: 60%;
+    margin: 3rem auto;
+    border-radius: 0.5rem;
+    padding: 2rem;
+}
+.modal-title{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.modal-options{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+.modal-button{
+    padding: 0.5rem;
+    width: 100px;
+    transition: 100ms ease-in-out;
+    border-radius: 0.5rem;
+}
+.modal-submit-button{
+    background-color: var(--orange);
+}
+.modal-submit-button:hover{
+    background-color: var(--dark-orange);
+    transition: 100ms ease-in-out;
+}
+.modal-close-button{
+    background-color: lightgray;
+}
+.modal-close-button:hover{
+    background-color: gray;
+    transition: 100ms ease-in-out;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.form-group input, .form-group select{
+    border-radius: 0.3rem;
+    border-color: var(--gray);
+}
+.create-task-button{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    background-color: var(--orange);
+    padding: 0.5rem;
+    transition: 100ms ease-in-out;
+}
+.create-task-button:hover{
+    background-color: var(--dark-orange);
+    transition: 100ms ease-in-out;
+}
+
+.error{
+    border: 1px solid red;
+    color: red;
+}
+.error-message{
+    color: red;
 }
 @media (max-width: 960px) {
     .main-container{
