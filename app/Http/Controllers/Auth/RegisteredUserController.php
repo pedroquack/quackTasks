@@ -42,7 +42,7 @@ class RegisteredUserController extends Controller
         ]);
 
         if($user){
-            return http_response_code(200);
+            http_response_code(200);
         }
 
         event(new Registered($user));
