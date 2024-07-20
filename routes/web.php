@@ -10,13 +10,9 @@ Route::get('/', function () {
     if(!Auth::check()){
         return view('main');
     }
-
     return redirect()->route('tasks.index');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
