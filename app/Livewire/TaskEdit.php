@@ -19,6 +19,7 @@ class TaskEdit extends Component
     ];
 
     public function update(){
+        $this->authorize('user_task',$this->task);
         $this->validate();
         $this->task->name = $this->nome;
         $this->task->priority = $this->prioridade;
