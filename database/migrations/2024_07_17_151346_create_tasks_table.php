@@ -17,7 +17,6 @@ return new class extends Migration
             $table->boolean('completed')->default(0);
             $table->timestamp('date')->nullable();
             $table->enum('priority',array(1,2,3))->default(2);
-            $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
