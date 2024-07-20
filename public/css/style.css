@@ -287,6 +287,9 @@
     color: red;
 }
 @media (max-width: 960px) {
+    *{
+        font-size: 14px;
+    }
     .main-container{
         grid-template-columns: 12fr;
         min-height: 500px;
