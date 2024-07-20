@@ -11,7 +11,7 @@ Route::get('/', function () {
         return view('main');
     }
     return redirect()->route('tasks.index');
-});
+})->name('home');
 
 
 Route::middleware('auth')->group(function () {
