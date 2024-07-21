@@ -8,22 +8,22 @@ use Livewire\Component;
 
 class TaskCreate extends Component
 {
-    public $nome;
-    public $prioridade = 2;
-    public $data;
+    public $name;
+    public $priority = 2;
+    public $date;
 
     protected $rules = [
-        'nome' => 'required|min:1|max:255',
-        'prioridade' => 'required|digits_between:1,3',
-        'data' => 'nullable|date|after_or_equal:now',
+        'name' => 'required|min:1|max:255',
+        'priority' => 'required|digits_between:1,3',
+        'date' => 'nullable|date|after:now',
     ];
 
     public function store(){
         $this->validate();
         Task::create([
-            'name' => $this->nome,
-            'priority' => $this->prioridade,
-            'date' => $this->data,
+            'name' => $this->name,
+            'priority' => $this->priority,
+            'date' => $this->date,
             'user_id' => Auth::user()->id,
         ]);
 

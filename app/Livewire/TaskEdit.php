@@ -8,30 +8,30 @@ use Livewire\Component;
 class TaskEdit extends Component
 {
     public Task $task;
-    public $nome;
-    public $prioridade;
-    public $data;
+    public $name;
+    public $priority;
+    public $date;
 
     protected $rules = [
-        'nome' => 'required|min:1|max:255',
-        'prioridade' => 'required|digits_between:1,3',
-        'data' => 'nullable|date|after_or_equal:now',
+        'name' => 'required|min:1|max:255',
+        'priority' => 'required|digits_between:1,3',
+        'date' => 'nullable|date|after:now',
     ];
 
     public function update(){
         $this->authorize('user_task',$this->task);
         $this->validate();
-        $this->task->name = $this->nome;
-        $this->task->priority = $this->prioridade;
-        $this->task->date = $this->data;
+        $this->task->name = $this->name;
+        $this->task->priority = $this->priority;
+        $this->task->date = $this->date;
         $this->task->save();
         return redirect()->route('tasks.index');
     }
     public function render()
     {
-        $this->nome = $this->task->name;
-        $this->data = $this->task->date;
-        $this->prioridade = $this->task->priority;
+        $this->name = $this->task->name;
+        $this->date = $this->task->date->format('Y-m-d H:i');
+        $this->priority = $this->task->priority;
         return view('livewire.task-edit');
     }
 }
