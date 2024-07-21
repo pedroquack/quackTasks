@@ -264,6 +264,7 @@
 .form-group input, .form-group select{
     border-radius: 0.3rem;
     border-color: var(--gray);
+    width: 100%;
 }
 .create-task-button{
     margin-top: 0.5rem;
