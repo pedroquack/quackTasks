@@ -30,7 +30,9 @@ class TaskEdit extends Component
     public function render()
     {
         $this->name = $this->task->name;
-        $this->date = $this->task->date->format('Y-m-d H:i');
+        if(isset($this->task->date)){
+            $this->date = $this->task->date->format('Y-m-d H:i');
+        }
         $this->priority = $this->task->priority;
         return view('livewire.task-edit');
     }
