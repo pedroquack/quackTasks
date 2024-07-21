@@ -1,5 +1,4 @@
 <div>
-    {{ $task->date->format('d/m/Y H:i') }}
     <h1>Editar tarefa</h1>
     <form wire:submit.prevent='update'>
         <div class="form-group">
