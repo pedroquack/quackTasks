@@ -34,7 +34,7 @@ class SendNotification implements ShouldQueue
         $yesterday = Carbon::yesterday();
         $tasks = Task::where('date', '<=', $tomorrow)->where('date', '>', $yesterday)->where('completed', 0)->get();
         foreach($tasks as $task){
-            Mail::to($task->user->email)->queue(new TaskNotification($task));
+            Mail::to($task->user->email)->send(new TaskNotification($task));
         }
     }
 }
