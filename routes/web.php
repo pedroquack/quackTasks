@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Auth;
@@ -22,6 +23,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('tasks/{id}', [TaskController::class, 'destroy'])->name('tasks.destroy');
 });
 
+Route::get('category', 'CategoryController@index');
+Route::post('category', 'CategoryController@store');
 
 
 require __DIR__.'/auth.php';
