@@ -12,4 +12,4 @@ use Illuminate\Support\Facades\Mail;
 
 
 
-Schedule::job(new SendNotification)->twiceDailyAt(10,20);
+Schedule::job(new SendNotification)->twiceDailyAt(12,20);
