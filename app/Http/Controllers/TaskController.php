@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Task;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
 class TaskController extends Controller
 {
     public function index(){
-        $tasks = Task::where('user_id', Auth::user()->id)->orderBy('completed')->orderBy('priority')->orderBy('date', 'desc')->get();
+        $tasks = Task::where('user_id', Auth::user()->id)->orderBy('completed')->orderBy('priority')->orderBy('date')->get();
         return view('tasks.index', compact('tasks'));
     }
 
@@ -22,6 +21,8 @@ class TaskController extends Controller
             abort(404);
         }
         $task->delete();
+
+
         return redirect()->back();
     }
 }
