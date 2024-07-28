@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Category;
 use App\Models\Task;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -9,6 +10,7 @@ use Livewire\Component;
 class TaskCreate extends Component
 {
     public $name;
+    public $category;
     public $priority = 2;
     public $date;
 
@@ -16,6 +18,7 @@ class TaskCreate extends Component
         'name' => 'required|min:1|max:255',
         'priority' => 'required|digits_between:1,3',
         'date' => 'nullable|date|after:now',
+        'category' => 'required',
     ];
 
     public function store(){
@@ -24,6 +27,7 @@ class TaskCreate extends Component
             'name' => $this->name,
             'priority' => $this->priority,
             'date' => $this->date,
+            'category_id' => $this->category,
             'user_id' => Auth::user()->id,
         ]);
 
@@ -32,6 +36,7 @@ class TaskCreate extends Component
 
     public function render()
     {
-        return view('livewire.task-create');
+        $categories = Category::where('user_id',Auth::user()->id)->get();
+        return view('livewire.task-create', compact('categories'));
     }
 }

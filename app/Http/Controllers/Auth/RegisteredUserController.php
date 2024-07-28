@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -44,6 +45,10 @@ class RegisteredUserController extends Controller
 
         if($user){
             http_response_code(200);
+            Category::create([
+                'name' => 'Sem categoria',
+                'user_id' => $user->id,
+            ]);
         }
 
         event(new Registered($user));

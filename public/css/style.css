@@ -152,16 +152,22 @@
     transition: 100ms ease-in-out;
 }
 .category-dropdown-button{
+    padding: 0.5rem;
     display: flex;
+    cursor: pointer;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+}
+.category-dropdown-button:hover{
+    background-color: var(--light-gray);
 }
 .category-dropdown-button span{
     font-size: 1.2rem;
     font-weight: bold;
 }
 .category-tasks{
+    margin-left: 1rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -171,6 +177,9 @@
     justify-content: space-between;
     cursor: pointer;
     height: 100%;
+}
+.task:hover{
+    background-color: var(--light-gray);
 }
 .task-title{
     display: flex;
@@ -364,6 +373,12 @@
     }
     .modal-content{
         max-width: 90%;
+    }
+    .category-dropdown-button{
+        padding: 0.3rem;
+    }
+    .category-tasks{
+        margin: 0;
     }
 }
 

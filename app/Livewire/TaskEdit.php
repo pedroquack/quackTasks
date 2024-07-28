@@ -2,13 +2,16 @@
 
 namespace App\Livewire;
 
+use App\Models\Category;
 use App\Models\Task;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class TaskEdit extends Component
 {
     public Task $task;
     public $name;
+    public $category;
     public $priority;
     public $date;
 
@@ -24,6 +27,7 @@ class TaskEdit extends Component
         $this->task->name = $this->name;
         $this->task->priority = $this->priority;
         $this->task->date = $this->date;
+        $this->task->category_id = $this->category;
         $this->task->save();
         return redirect()->route('tasks.index');
     }
@@ -34,6 +38,8 @@ class TaskEdit extends Component
             $this->date = $this->task->date->format('Y-m-d H:i');
         }
         $this->priority = $this->task->priority;
-        return view('livewire.task-edit');
+        $this->category = $this->task->category_id;
+        $categories = Category::where('user_id',Auth::user()->id)->get();
+        return view('livewire.task-edit', compact('categories'));
     }
 }

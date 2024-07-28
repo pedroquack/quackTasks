@@ -6,6 +6,16 @@
             <input type="text" wire:model="name" id="name" placeholder="Ex: Limpar a cozinha" class="@error('name') error @enderror">
             @error('name') <span class="error-message">{{ $message }}</span> @enderror
         </div>
+        <div class="form-group">
+            <label for="category">Categoria</label>
+            <select wire:model="category" id="category" class="@error('category') error @enderror">
+                <option value="">Escolher categoria</option>
+                @foreach ($categories as $cat)
+                    <option value="{{ $cat->id }}" @if($task->category_id === $cat->id) selected @endif>{{ $cat->name }}</option>
+                @endforeach
+            </select>
+            @error('category') <span class="error-message">{{ $message }}</span> @enderror
+        </div>
         <div class="grid grid-cols-2 gap-3">
             <div class="form-group col-span-2 md:col-span-1">
                 <label for="date">Data de expiração <small>(opcional)</small></label>

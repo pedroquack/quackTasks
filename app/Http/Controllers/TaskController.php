@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Task;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -9,8 +10,8 @@ use Illuminate\Support\Facades\Gate;
 class TaskController extends Controller
 {
     public function index(){
-        $tasks = Task::where('user_id', Auth::user()->id)->orderBy('completed')->orderBy('priority')->orderBy('date')->get();
-        return view('tasks.index', compact('tasks'));
+        $categories = Category::where('user_id', Auth::user()->id)->get();
+        return view('tasks.index', compact('categories'));
     }
 
     public function destroy($id){

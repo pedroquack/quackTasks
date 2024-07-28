@@ -18,10 +18,18 @@
         </div>
         <hr>
         <div class="task-container-content">
-            <div class="category-tasks">
-                @foreach ($tasks as $task)
-                    @livewire('task', ['task' => $task])
+                @foreach ($categories as $cat)
+                <div x-data="{isOpen: true}">
+                    <div class="category-dropdown-button" @click="isOpen = !isOpen">
+                        <span>{{ $cat->name }}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="currentColor" :class="{'rotate-90': isOpen}"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>
+                    </div>
+                    <div x-show="isOpen" x-collapse class="category-tasks">
+                        @foreach ($cat->tasks as $task)
+                            @livewire('task', ['task' => $task])
+                        @endforeach
+                    </div>
+                </div>
                 @endforeach
-            </div>
         </div>
 </x-app-layout>
