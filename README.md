@@ -10,4 +10,5 @@ Desenvolvi o quackTasks para proporcionar uma experiência simplificada e intuit
 
 Tecnologias utilizadas: PHP, LARAVEL, LIVEWIRE, SQL, HTML5, CSS, BOOTSTRAP, JAVASCRIPT
 
-URL do site: https://quacktasks.com.br
+URL do site: <a href="quacktasks.com.br"> https://quacktasks.com.br </a>
+
