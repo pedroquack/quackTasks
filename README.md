@@ -12,3 +12,17 @@ Tecnologias utilizadas: PHP, LARAVEL, LIVEWIRE, SQL, HTML5, CSS, BOOTSTRAP, JAVA
 
 URL do site: <a href="quacktasks.com.br"> https://quacktasks.com.br </a>
 
+TELAS
+Tela Principal
+![image](https://github.com/user-attachments/assets/3bfb43c6-648e-4ae6-b705-76f9a817d3db)
+<hr>
+Lista de Tarefas
+<hr>
+![image](https://github.com/user-attachments/assets/e6067230-921b-4c89-a299-5a888ce9304f)
+<hr>
+Criando Tarefa
+![image](https://github.com/user-attachments/assets/53968e7b-b484-4209-8bdc-091339a35bc2)
+
+
+
+
